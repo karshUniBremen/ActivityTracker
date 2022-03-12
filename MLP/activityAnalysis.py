@@ -24,9 +24,7 @@ class MeasurementExtractor:
     def __init__(self, measurement_file: str, column_labels: list) -> None:
         self._measurement_file: str = measurement_file
         self._column_labels: list = column_labels
-        exp_id_str, user_id_str, activity_str = self.measurement_filename.split('_')
-        _, self._experiment_id = exp_id_str.split(':')
-        _, self._user_id = user_id_str.split(':')
+        _,self._experiment_id, _, self._user_id, activity_str = self.measurement_filename.split('_')
 
     @property
     def experiment_id(self) -> str:
